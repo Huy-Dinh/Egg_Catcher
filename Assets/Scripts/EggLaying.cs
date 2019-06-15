@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EggLaying : MonoBehaviour
 {
-    public GameObject ball;
+    public GameObject egg;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +28,7 @@ public class EggLaying : MonoBehaviour
             0.0f
             );
             Quaternion spawnRotation = Quaternion.identity;
-            Instantiate(ball, spawnPosition, spawnRotation);
+            Instantiate(egg, spawnPosition, spawnRotation);
             yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 2.0f));
         }
     }
