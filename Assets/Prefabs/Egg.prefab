@@ -131,3 +131,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491b1d185f14b9043b2fc72295565bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brokenEggSprite: {fileID: 3857448526218050242, guid: 8e079c56b2a90fe448e26bcf683ea5b2,
+    type: 3}
