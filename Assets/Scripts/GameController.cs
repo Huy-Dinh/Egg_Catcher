@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public Camera cam;
     public GameObject ball;
     private float maxWidth;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
         maxWidth = targetWidth.x - ballWidth;
         StartCoroutine(Spawn());
     }
+
     public IEnumerator Spawn()
     {
         yield return new WaitForSeconds(2.0f);
@@ -39,5 +41,5 @@ public class GameController : MonoBehaviour
         }
         
     }
-
+  
 }
