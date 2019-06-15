@@ -9,7 +9,9 @@ public class GameController : MonoBehaviour
     public Camera cam;
     public GameObject ball;
     private float maxWidth;
-    
+    public Text timerText;
+    public float timeLeft;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,17 @@ public class GameController : MonoBehaviour
         float ballWidth = ball.GetComponent<Renderer>().bounds.extents.x;
         maxWidth = targetWidth.x - ballWidth;
         StartCoroutine(Spawn());
+    }
+
+    void FixedUpdate()
+    {
+        // fixupdated gives us fixed Delta Time
+        timeLeft -= Time.deltaTime;   //if it's an update, it gives us the current whcih change every frame that the time it took since the last update since the last time the frame came around
+        if (timeLeft < 0)
+        {
+            timeLeft = 0;
+        }
+        UpdateText();
     }
 
     public IEnumerator Spawn()
@@ -41,5 +54,9 @@ public class GameController : MonoBehaviour
         }
         
     }
-  
+    void UpdateText()
+    {
+        timerText.text = "Time Left:\n" + Mathf.RoundToInt(timeLeft).ToString();
+    }
+
 }
