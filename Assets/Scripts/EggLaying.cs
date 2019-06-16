@@ -5,9 +5,15 @@ using UnityEngine;
 public class EggLaying : MonoBehaviour
 {
     public GameObject ball;
+    private AudioSource source;
+    private Object[] drop;
+    private Object[] chicken;
     // Start is called before the first frame update
     void Start()
     {
+        chicken = Resources.LoadAll("SFX/chicken",typeof(AudioClip));
+        drop = Resources.LoadAll("SFX/drop", typeof(AudioClip));
+        source = GetComponent<AudioSource>();
         StartCoroutine(Spawn());
     }
 
@@ -29,7 +35,14 @@ public class EggLaying : MonoBehaviour
             );
             Quaternion spawnRotation = Quaternion.identity;
             Instantiate(ball, spawnPosition, spawnRotation);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 2.0f));
+
+            // Play sound
+            var sound = (AudioClip)chicken[Random.Range(0, chicken.Length)];
+            source.PlayOneShot(sound,(float)0.5);
+            sound = (AudioClip)drop[Random.Range(0, drop.Length)];
+            source.PlayOneShot(sound);
+
+            yield return new WaitForSeconds(UnityEngine.Random.Range(3.0f, 6.0f));
         }
     }
 }
