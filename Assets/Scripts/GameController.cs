@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     private float maxWidth;
     public Text timerText;
     public float timeLeft;
+    public GameObject gameOverText;
+    public GameObject restartButton;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +24,8 @@ public class GameController : MonoBehaviour
         }
         Vector3 upperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
-        //Renderer renderer = new Renderer();
         float ballWidth = ball.GetComponent<Renderer>().bounds.extents.x;
         maxWidth = targetWidth.x - ballWidth;
-        StartCoroutine(Spawn());
     }
 
     void FixedUpdate()
@@ -35,25 +36,27 @@ public class GameController : MonoBehaviour
         {
             timeLeft = 0;
         }
+        
         UpdateText();
+        if(timeLeft == 0)
+        {
+            StartCoroutine(showEndGameMenu());
+        }
+          
+    }
+    IEnumerator showEndGameMenu()
+    {  
+        yield return new WaitForSeconds(1.0f);
+        if (gameOverText.activeSelf == false)
+        {
+            gameOverText.SetActive(true);
+        }
+        if (restartButton.activeSelf == false)
+        {
+            restartButton.SetActive(true);
+        }
     }
 
-    public IEnumerator Spawn()
-    {
-        yield return new WaitForSeconds(2.0f);
-        while(true)
-        {
-            Vector3 spawnPosition = new Vector3(
-            UnityEngine.Random.Range(-maxWidth, maxWidth),
-            transform.position.y,
-            0.0f
-            );
-            Quaternion spawnRotation = Quaternion.identity;
-            //Instantiate(ball, spawnPosition, spawnRotation);
-            yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f,2.0f));
-        }
-        
-    }
     void UpdateText()
     {
         timerText.text = "Time Left:\n" + Mathf.RoundToInt(timeLeft).ToString();
