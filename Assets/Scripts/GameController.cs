@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public Camera cam;
-    public GameObject ball;
+    public GameObject egg;
     private float maxWidth;
     public Text timerText;
     public float timeLeft;
@@ -24,8 +24,8 @@ public class GameController : MonoBehaviour
         }
         Vector3 upperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
-        float ballWidth = ball.GetComponent<Renderer>().bounds.extents.x;
-        maxWidth = targetWidth.x - ballWidth;
+        float eggWidth = egg.GetComponent<Renderer>().bounds.extents.x;
+        maxWidth = targetWidth.x - eggWidth;
     }
 
     void FixedUpdate()
