@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grass
+  - Egg
   layers:
   - Default
   - TransparentFX
@@ -44,6 +46,12 @@ TagManager:
   - name: Background
     uniqueID: 3622255073
     locked: 0
-  - name: Foreground
+  - name: Egg
+    uniqueID: 850385203
+    locked: 0
+  - name: Middle
     uniqueID: 3445044399
+    locked: 0
+  - name: Foreground
+    uniqueID: 4250185073
     locked: 0
