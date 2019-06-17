@@ -39,11 +39,11 @@ public class EggLaying : MonoBehaviour
             0.0f
             );
             Quaternion spawnRotation = Quaternion.identity;
-            var sound = (AudioClip)chicken[Random.Range(0, chicken.Length)];
-            // Play sound
 
-            sound = (AudioClip)drop[Random.Range(0, drop.Length)];
-            source.PlayOneShot(sound,(float)0.5);
+            // Play sound
+            var sound = (AudioClip)chicken[Random.Range(0, chicken.Length)];
+            source.PlayOneShot(sound, (float)0.5);
+            sound = (AudioClip)drop[Random.Range(0, drop.Length)];           
             source.PlayOneShot(sound);
 
             Instantiate(egg, spawnPosition, spawnRotation);

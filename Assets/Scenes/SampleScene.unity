@@ -637,7 +637,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.952012
+  orthographic size: 6.628327
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -661,7 +661,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -10}
+  m_LocalPosition: {x: 0, y: 3.45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1852,6 +1852,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 7069328372678738257, guid: 591c86b1cf6d40b40838ff5c776d1e6c,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1731120261}
     - target: {fileID: 7069328372678738271, guid: 591c86b1cf6d40b40838ff5c776d1e6c,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -1862,11 +1867,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 7069328372678738257, guid: 591c86b1cf6d40b40838ff5c776d1e6c,
-        type: 3}
-      propertyPath: timerText
-      value: 
-      objectReference: {fileID: 1731120261}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 591c86b1cf6d40b40838ff5c776d1e6c, type: 3}
 --- !u!1 &1941210621
