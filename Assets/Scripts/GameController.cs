@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public float timeLeft;
     public GameObject gameOverText;
     public GameObject restartButton;
-
+    public GameObject[] chickens;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,12 @@ public class GameController : MonoBehaviour
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
         float eggWidth = egg.GetComponent<Renderer>().bounds.extents.x;
         maxWidth = targetWidth.x - eggWidth;
+
+        // Populate the chicken list
+        chickens = GameObject.FindGameObjectsWithTag("Chicken");
+
+        // Start making it rain eggs
+        StartCoroutine(chickenControl());
     }
 
     void FixedUpdate()
@@ -40,6 +46,7 @@ public class GameController : MonoBehaviour
         UpdateText();
         if(timeLeft == 0)
         {
+            StopCoroutine(chickenControl());
             StartCoroutine(showEndGameMenu());
         }
           
@@ -62,4 +69,18 @@ public class GameController : MonoBehaviour
         timerText.text = "Time Left:\n" + Mathf.RoundToInt(timeLeft).ToString();
     }
 
+    public IEnumerator chickenControl()
+    {
+        int chickenIndex = -1;
+        float delayTime = 0;
+        yield return new WaitForSeconds(1.0f);
+        while (true)
+        {
+            chickenIndex = UnityEngine.Random.Range((int)0, (int) chickens.Length);
+            delayTime = UnityEngine.Random.Range(1.0f, 2.0f);
+
+            chickens[chickenIndex].GetComponent<EggLaying>().LayEgg();
+            yield return new WaitForSeconds(delayTime);
+        }
+    }
 }
