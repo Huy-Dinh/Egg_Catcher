@@ -1617,6 +1617,7 @@ MonoBehaviour:
   timeLeft: 10
   gameOverText: {fileID: 1941210621}
   restartButton: {fileID: 1848433913}
+  chickens: []
 --- !u!4 &1829701820
 Transform:
   m_ObjectHideFlags: 0
