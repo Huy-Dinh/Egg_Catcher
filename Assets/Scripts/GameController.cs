@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     public GameObject restartButton;
     public GameObject[] chickens;
 
+    Coroutine COChickenControl, COChickenTeleporter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +33,8 @@ public class GameController : MonoBehaviour
         chickens = GameObject.FindGameObjectsWithTag("Chicken");
 
         // Start making it rain eggs
-        StartCoroutine(chickenControl());
-        StartCoroutine(chickenTeleporter());
+        COChickenControl = StartCoroutine(chickenControl());
+        COChickenTeleporter = StartCoroutine(chickenTeleporter());
     }
 
     void FixedUpdate()
@@ -47,8 +49,10 @@ public class GameController : MonoBehaviour
         UpdateText();
         if (timeLeft == 0)
         {
-            StopCoroutine(chickenControl());
-            StopCoroutine(chickenTeleporter());
+            if (COChickenControl != null)
+                StopCoroutine(COChickenControl);
+            if (COChickenTeleporter != null)
+                StopCoroutine(COChickenTeleporter);
             StartCoroutine(showEndGameMenu());
         }
 
