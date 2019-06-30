@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
 
         // Start making it rain eggs
         StartCoroutine(chickenControl());
+        StartCoroutine(chickenTeleporter());
     }
 
     void FixedUpdate()
@@ -42,17 +43,18 @@ public class GameController : MonoBehaviour
         {
             timeLeft = 0;
         }
-        
+
         UpdateText();
-        if(timeLeft == 0)
+        if (timeLeft == 0)
         {
             StopCoroutine(chickenControl());
+            StopCoroutine(chickenTeleporter());
             StartCoroutine(showEndGameMenu());
         }
-          
+
     }
     IEnumerator showEndGameMenu()
-    {  
+    {
         yield return new WaitForSeconds(1.0f);
         if (gameOverText.activeSelf == false)
         {
@@ -76,11 +78,35 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         while (true)
         {
-            chickenIndex = UnityEngine.Random.Range((int)0, (int) chickens.Length);
+            chickenIndex = UnityEngine.Random.Range((int)0, (int)chickens.Length);
             delayTime = UnityEngine.Random.Range(1.0f, 2.0f);
 
             chickens[chickenIndex].GetComponent<EggLaying>().LayEgg();
             yield return new WaitForSeconds(delayTime);
+        }
+    }
+
+    public IEnumerator chickenTeleporter()
+    {
+        const int minHorizontal = -8;
+        const int maxHorizontal = 9;
+        const int minVertical = 4;
+        const int maxVertical = 10;
+
+        int randomX;
+        int randomY;
+        float delayTime;
+        int chickenIndex;
+
+        while (true)
+        {
+            delayTime = delayTime = UnityEngine.Random.Range(5.0f, 7.0f);
+            yield return new WaitForSeconds(delayTime);
+            chickenIndex = UnityEngine.Random.Range((int)0, (int)chickens.Length);
+
+            randomX = UnityEngine.Random.Range(minHorizontal, maxHorizontal);
+            randomY = UnityEngine.Random.Range(minVertical, maxVertical);
+            chickens[chickenIndex].GetComponent<Transform>().position = new Vector3(randomX, randomY);
         }
     }
 }
