@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,6 +47,7 @@ public class EggLaying : MonoBehaviour
             source.PlayOneShot(sound);
 
             Instantiate(egg, spawnPosition, spawnRotation);
+            transform.parent.transform.GetComponent<Animator>().SetTrigger("givingBirth");
             yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 2.0f));
         }
         
