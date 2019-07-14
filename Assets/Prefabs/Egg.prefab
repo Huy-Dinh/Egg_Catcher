@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -441281035696256819}
   m_Layer: 0
   m_Name: Egg
-  m_TagString: Untagged
+  m_TagString: Egg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,4 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenEggSprite: {fileID: 3857448526218050242, guid: 8e079c56b2a90fe448e26bcf683ea5b2,
+    type: 3}
+  crackedEggSprite: {fileID: 2769397780026446240, guid: 405552e87fa77b74c9697d7a98bf3c31,
     type: 3}

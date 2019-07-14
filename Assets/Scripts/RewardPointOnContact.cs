@@ -6,6 +6,9 @@ public class RewardPointOnContact : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ScoreController.scoreValue += 1;
+        if(other.gameObject.tag == "Egg")
+        {
+            ScoreController.scoreValue += 1;
+        }        
     }
 }
