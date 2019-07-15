@@ -10,7 +10,6 @@ public class EggLaying : MonoBehaviour
     private Object[] drop;
     private Object[] chicken;
     public GameObject findObjectGameController;
-    public float timeCounted;
     
     // Start is called before the first frame update
     void Start()
@@ -18,39 +17,29 @@ public class EggLaying : MonoBehaviour
         chicken = Resources.LoadAll("SFX/chicken",typeof(AudioClip));
         drop = Resources.LoadAll("SFX/drop", typeof(AudioClip));
         source = GetComponent<AudioSource>();
-        findObjectGameController = GameObject.Find("GameController"); // get GameController Script because we want to access the GameController Component
-        StartCoroutine(Spawn());
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeCounted = findObjectGameController.GetComponent<GameController>().timeLeft; // we want to update timeLeft from GameCOntroller because when time left is zero, chickens are not allowed to give birth.
     }
     
-    public IEnumerator Spawn()
+    public void LayEgg()
     {
-        yield return new WaitForSeconds(1.0f);
-        while (timeCounted > 0)
-        {
-            Vector3 spawnPosition = new Vector3(
+        Vector3 spawnPosition = new Vector3(
             transform.position.x,
             transform.position.y,
             0.0f
             );
-            Quaternion spawnRotation = Quaternion.identity;
+        Quaternion spawnRotation = Quaternion.identity;
 
-            // Play sound
-            var sound = (AudioClip)chicken[Random.Range(0, chicken.Length)];
-            source.PlayOneShot(sound, (float)0.5);
-            sound = (AudioClip)drop[Random.Range(0, drop.Length)];           
-            source.PlayOneShot(sound);
-
-            Instantiate(egg, spawnPosition, spawnRotation);
-            transform.parent.transform.GetComponent<Animator>().SetTrigger("givingBirth");
-            yield return new WaitForSeconds(UnityEngine.Random.Range(1.0f, 2.0f));
-        }
-        
+        // Play sound
+        var sound = (AudioClip)chicken[Random.Range(0, chicken.Length)];
+        source.PlayOneShot(sound, (float)0.5);
+        sound = (AudioClip)drop[Random.Range(0, drop.Length)];
+        source.PlayOneShot(sound);
+        transform.parent.transform.GetComponent<Animator>().SetTrigger("givingBirth");
+        Instantiate(egg, spawnPosition, spawnRotation);
     }
     
 }

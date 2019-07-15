@@ -1772,6 +1772,7 @@ MonoBehaviour:
   startButton: {fileID: 0}
   mEggLaying: {fileID: 7069328372678738257, guid: 591c86b1cf6d40b40838ff5c776d1e6c,
     type: 3}
+  chickens: []
 --- !u!4 &1829701820
 Transform:
   m_ObjectHideFlags: 0
