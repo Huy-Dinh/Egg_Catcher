@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8160866834217504525}
   - component: {fileID: 8160866834217504522}
   - component: {fileID: -441281035696256819}
-  - component: {fileID: -408638644398945512}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Egg
@@ -136,15 +135,3 @@ MonoBehaviour:
     type: 3}
   crackedEggSprite: {fileID: 2769397780026446240, guid: 405552e87fa77b74c9697d7a98bf3c31,
     type: 3}
---- !u!114 &-408638644398945512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8160866834217504523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e3647c0cd6e4654c9ec4f0311dbd4f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
