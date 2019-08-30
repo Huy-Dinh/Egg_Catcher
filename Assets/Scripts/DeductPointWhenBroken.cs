@@ -18,7 +18,7 @@ public class DeductPointWhenBroken : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Grass")
+        if ((col.gameObject.tag == "Grass") || (col.gameObject.tag == "Destroyer"))
         {
             GameObject gameController = GameObject.Find("GameController");
             if (gameController == null)

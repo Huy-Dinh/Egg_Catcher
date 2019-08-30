@@ -454,12 +454,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 287057028}
-  - component: {fileID: 287057027}
   - component: {fileID: 287057026}
   - component: {fileID: 287057029}
+  - component: {fileID: 287057027}
   m_Layer: 0
   m_Name: Destroyer
-  m_TagString: Untagged
+  m_TagString: Destroyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287057025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4462d2fb19c33604b9606b7bc071ec7d, type: 3}
   m_Name: 
@@ -486,16 +486,17 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -14.341769, y: 9.420688}
-  - {x: -14.386694, y: -5.617581}
-  - {x: 16.464283, y: -5.578767}
-  - {x: 16.490715, y: 9.370243}
+  - {x: -11.592481, y: -3.2723725}
+  - {x: -12.702664, y: 0.35761267}
+  - {x: -13.481336, y: 12.453333}
+  - {x: 14.892666, y: 12.029219}
+  - {x: 13.220372, y: -3.2574148}
 --- !u!4 &287057028
 Transform:
   m_ObjectHideFlags: 0
@@ -531,7 +532,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20.827274
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1585,7 +1586,7 @@ PrefabInstance:
     - target: {fileID: 3209023499649900813, guid: 33da6ce6b27f49046823989f89614a6e,
         type: 3}
       propertyPath: m_TagString
-      value: Chicken
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3209023499649900803, guid: 33da6ce6b27f49046823989f89614a6e,
         type: 3}
@@ -1772,7 +1773,7 @@ GameObject:
   - component: {fileID: 1829701821}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1822,10 +1823,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a146f2e6089b3d4e86df2e7a2b07c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  egg: {fileID: 0}
+  cam: {fileID: 519420031}
+  egg: {fileID: 8160866834217504523, guid: a61458b8076e98d458321f3f900f30c3, type: 3}
   livesLeft: 10
   LifeText: {fileID: 1731120261}
+  gameOverText: {fileID: 1941210621}
+  restartButton: {fileID: 1848433913}
   chickens: []
 --- !u!1 &1848433913
 GameObject:

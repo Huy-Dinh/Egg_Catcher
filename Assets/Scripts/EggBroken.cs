@@ -10,16 +10,26 @@ public class EggBroken : MonoBehaviour
     SpriteRenderer thisSpriteRenderer;
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Grass")
+        if (col.gameObject.tag == "Destroyer")
         {
-            GameObject thisCrackedEgg = Instantiate(crackedEggSprite, transform.position, transform.rotation);
             Destroy(gameObject);
-            Destroy(thisCrackedEgg, 1);
-            Vector3 spawnPosition = new Vector3(thisCrackedEgg.transform.position.x,
-                                    thisCrackedEgg.transform.position.y,
-                                    0.0f);
-            GameObject thisBrokenEgg = Instantiate(brokenEggSprite, spawnPosition, Quaternion.identity);
-            Destroy(thisBrokenEgg, 1);
+        }
+        else if (col.gameObject.tag == "Grass")
+        {
+            Vector3 spawnPosition = new Vector3( 
+                transform.position.x, 
+                transform.position.y, 
+                0.0f 
+                ); 
+            Quaternion spawnRotation = Quaternion.identity; 
+            GameObject thisBrokenEgg = Instantiate(brokenEggSprite, spawnPosition, spawnRotation); 
+            Destroy(gameObject); 
+            Destroy(thisBrokenEgg, 2);
+            
+            GameObject gameController = GameObject.Find("GameController");
+            if (gameController == null)
+                return;
+            SurvivalGameController survivalScript = gameController.GetComponent<SurvivalGameController>();
         }
     }
 

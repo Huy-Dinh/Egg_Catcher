@@ -42,11 +42,19 @@ public class SurvivalGameController : MonoBehaviour
     void UpdateText()
     {
         LifeText.text = "Life Left:\n" + (livesLeft).ToString();
+        if (livesLeft == 0)
+        {
+            if (COChickenControl != null)
+                StopCoroutine(COChickenControl);
+            if (COChickenTeleporter != null)
+                StopCoroutine(COChickenTeleporter);
+            StartCoroutine(showEndGameMenu());
+        }
     }
 
     IEnumerator showEndGameMenu()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.1f);
         if (gameOverText.activeSelf == false)
         {
             gameOverText.SetActive(true);
