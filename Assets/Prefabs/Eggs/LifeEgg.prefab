@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa74e5ee3ab7ce4884ba83cb0138705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeRewarded: 2
+  lifeAdded: 1

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3647c0cd6e4654c9ec4f0311dbd4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeDeducted: 1
+  lifeAdded: -1
 --- !u!114 &-2328240302971106847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2e6b3e8efc0b64d8664ceb8c1dd69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointRewarded: 1
+  pointAdded: 1
