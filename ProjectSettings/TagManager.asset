@@ -8,6 +8,7 @@ TagManager:
   - Egg
   - Chicken
   - Destroyer
+  - Hat
   layers:
   - Default
   - TransparentFX

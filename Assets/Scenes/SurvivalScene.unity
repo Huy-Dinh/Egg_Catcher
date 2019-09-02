@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 1708088097}
   - component: {fileID: 1708088099}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,7 +1721,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: 'Score:'
 --- !u!222 &1708088098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2173,9 +2173,7 @@ PrefabInstance:
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
       propertyPath: m_Text
-      value: 'Time Left:
-
-        ??'
+      value: 'Life:'
       objectReference: {fileID: 0}
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
