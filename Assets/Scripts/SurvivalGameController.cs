@@ -15,6 +15,7 @@ public class SurvivalGameController : MonoBehaviour
     private float maxWidth;
     public GameObject[] chickens;
     Coroutine COChickenControl, COChickenTeleporter;
+    Coroutine COVirusEgg, COLifeEgg;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +30,10 @@ public class SurvivalGameController : MonoBehaviour
         // Populate the chicken list
         chickens = GameObject.FindGameObjectsWithTag("Chicken");
         // Starting the egg laying
-        COChickenControl = StartCoroutine(chickenControl());
+        COChickenControl = StartCoroutine(chickenNormalEggLayingControl());
         COChickenTeleporter = StartCoroutine(chickenTeleporter());
+        COVirusEgg = StartCoroutine(chickenVirusEggLayingControl());
+        COLifeEgg = StartCoroutine(chickenLifeEggLayingControl());
     }
 
     // Update is called once per frame
@@ -48,6 +51,10 @@ public class SurvivalGameController : MonoBehaviour
                 StopCoroutine(COChickenControl);
             if (COChickenTeleporter != null)
                 StopCoroutine(COChickenTeleporter);
+            if (COLifeEgg != null)
+                StopCoroutine(COLifeEgg);
+            if (COVirusEgg != null)
+                StopCoroutine(COVirusEgg);
             StartCoroutine(showEndGameMenu());
         }
     }
@@ -65,7 +72,7 @@ public class SurvivalGameController : MonoBehaviour
         }
     }
 
-    public IEnumerator chickenControl()
+    public IEnumerator chickenNormalEggLayingControl()
     {
         int chickenIndex = -1;
         float delayTime = 0;
@@ -76,6 +83,36 @@ public class SurvivalGameController : MonoBehaviour
             delayTime = UnityEngine.Random.Range(1.0f, 2.0f);
 
             chickens[chickenIndex].GetComponent<EggLaying>().LayEgg();
+            yield return new WaitForSeconds(delayTime);
+        }
+    }
+
+    public IEnumerator chickenLifeEggLayingControl()
+    {
+        int chickenIndex = -1;
+        float delayTime = 0;
+        yield return new WaitForSeconds(7.0f);
+        while (true)
+        {
+            chickenIndex = UnityEngine.Random.Range((int)0, (int)chickens.Length);
+            delayTime = UnityEngine.Random.Range(5.0f, 15.0f);
+
+            chickens[chickenIndex].GetComponent<EggLaying>().LayLifeEgg();
+            yield return new WaitForSeconds(delayTime);
+        }
+    }
+
+    public IEnumerator chickenVirusEggLayingControl()
+    {
+        int chickenIndex = -1;
+        float delayTime = 0;
+        yield return new WaitForSeconds(5.0f);
+        while (true)
+        {
+            chickenIndex = UnityEngine.Random.Range((int)0, (int)chickens.Length);
+            delayTime = UnityEngine.Random.Range(3.0f, 8.0f);
+
+            chickens[chickenIndex].GetComponent<EggLaying>().LayVirusEgg();
             yield return new WaitForSeconds(delayTime);
         }
     }
