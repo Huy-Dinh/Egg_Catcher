@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7069328372678738257}
   - component: {fileID: 1249174875620303453}
   m_Layer: 0
-  m_Name: Chicken
+  m_Name: chicken
   m_TagString: Chicken
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,9 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e144f331c9b4b1f448121ed52e8d646a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  egg: {fileID: 8160866834217504523, guid: a61458b8076e98d458321f3f900f30c3, type: 3}
+  egg: {fileID: 8160866834217504523, guid: 7c2f60878e374b943846534f0748c3e2, type: 3}
   findObjectGameController: {fileID: 0}
-  timeCounted: 0
 --- !u!82 &1249174875620303453
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewardPointOnCaught : MonoBehaviour
+public class AffectPointOnCaught : MonoBehaviour
 {
-    public int pointRewarded;
+    public int pointAdded;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Hat")
         {
-            ScoreController.scoreValue += pointRewarded;
+            ScoreController.scoreValue += pointAdded;
         }        
     }
 }
