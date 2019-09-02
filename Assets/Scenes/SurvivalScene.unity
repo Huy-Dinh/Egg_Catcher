@@ -1283,12 +1283,10 @@ GameObject:
   - component: {fileID: 1558229846}
   - component: {fileID: 1558229848}
   - component: {fileID: 1558229844}
-  - component: {fileID: 1558229847}
-  - component: {fileID: 1558229849}
   - component: {fileID: 1558229850}
   m_Layer: 0
   m_Name: Hat
-  m_TagString: Untagged
+  m_TagString: Hat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1422,18 +1420,6 @@ EdgeCollider2D:
   - {x: 0.8169455, y: -0.19371349}
   - {x: 0.9612282, y: -0.7515032}
   - {x: 0.62238157, y: -1.0016041}
---- !u!114 &1558229847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558229841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4462d2fb19c33604b9606b7bc071ec7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!68 &1558229848
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1452,18 +1438,6 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.6122639, y: -0.90043205}
   - {x: 0.6426158, y: -0.90043193}
---- !u!114 &1558229849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558229841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc2e6b3e8efc0b64d8664ceb8c1dd69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1558229850
 AudioSource:
   m_ObjectHideFlags: 0

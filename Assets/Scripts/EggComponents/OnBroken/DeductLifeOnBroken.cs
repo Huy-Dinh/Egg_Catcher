@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeductPointWhenBroken : MonoBehaviour
+public class DeductLifeOnBroken : MonoBehaviour
 {
+    public int lifeDeducted;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class DeductPointWhenBroken : MonoBehaviour
             if (gameController == null)
                 return;
             SurvivalGameController survivalScript = gameController.GetComponent<SurvivalGameController>();
-            survivalScript.livesLeft = survivalScript.livesLeft - 1;
+            survivalScript.livesLeft = survivalScript.livesLeft - lifeDeducted;
         }
     }
 }

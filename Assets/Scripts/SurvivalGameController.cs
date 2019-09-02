@@ -41,7 +41,7 @@ public class SurvivalGameController : MonoBehaviour
 
     void UpdateText()
     {
-        LifeText.text = "Life Left:\n" + (livesLeft).ToString();
+        LifeText.text = "Life:\n" + (livesLeft).ToString();
         if (livesLeft == 0)
         {
             if (COChickenControl != null)
