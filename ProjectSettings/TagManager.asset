@@ -7,6 +7,7 @@ TagManager:
   - Grass
   - Egg
   - Chicken
+  - Destroyer
   layers:
   - Default
   - TransparentFX
