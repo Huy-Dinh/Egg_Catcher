@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.05958529, g: 0.9716981, b: 0.15806001, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1602,19 +1602,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_Font: {fileID: 12800000, guid: 54c471e5622a8cc479a9e69ceacd4e27, type: 3}
+    m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 80
     m_Alignment: 6
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: SCORE
 --- !u!222 &1708088098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1772,7 +1772,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1782,8 +1782,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: bcf6abb1ae30d475d9ac319c6c1f6698,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 93fbb35d93d064dcfa0b4f675f92b1cc, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2116,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
       propertyPath: m_Text
-      value: 'Time Left:
+      value: 'TIME LEFT:
 
         ??'
       objectReference: {fileID: 0}
@@ -2128,7 +2129,7 @@ PrefabInstance:
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.048891068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
@@ -2138,7 +2139,7 @@ PrefabInstance:
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
         type: 3}
@@ -2159,6 +2160,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 54c471e5622a8cc479a9e69ceacd4e27,
+        type: 3}
+    - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726269158524291081, guid: 96a6b8f9abd196e47bb21957a9d7f421,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726269158524291080, guid: 96a6b8f9abd196e47bb21957a9d7f421,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96a6b8f9abd196e47bb21957a9d7f421, type: 3}
